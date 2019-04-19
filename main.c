@@ -2,5 +2,5 @@
 
 int main(void)
 {
-    printf("hellwwo, sworld\n");
+    printf("hellwwfssucko, sworld\n");
 }
