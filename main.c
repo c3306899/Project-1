@@ -8,7 +8,7 @@ void encryptRotation(){
    printf("Enter rotation: ");
    scanf("%d", &num);
    printf("Enter string: ");
-   fflush(stdin);
+   //fflush(stdin);
   //scanf("%s",&s);
   gets(s);
    printf("Value of rotation= %d\n", num);
