@@ -2,18 +2,15 @@
 #include<stdio.h>
 
 void encryptRotation(){
-	FILE *fptr;
-
-   if ((fptr = fopen("1.txt","r")) == NULL){
-       printf("Error! opening file");
-
-       // Program exits if the file pointer returns NULL.
-       exit(1);
-   }
+	
    int num;
    char s[256];
-   fscanf(fptr,"%d", &num);
-   fscanf(fptr,"%s", &s);
+   printf("Enter rotation: ");
+   scanf("%d", &num);
+   printf("Enter string: ");
+   fflush(stdin);
+  //scanf("%s",&s);
+  gets(s);
    printf("Value of rotation= %d\n", num);
    printf("Value of string= %s\n", s);
 
@@ -30,22 +27,17 @@ void encryptRotation(){
 	}
    }
       printf("After Encryption = %s\n", s);
-   fclose(fptr); 
-}
+  
+  }
 
 void decryptRotation(){
-	FILE *fptr;
-
-   if ((fptr = fopen("2.txt","r")) == NULL){
-       printf("Error! opening file");
-
-       // Program exits if the file pointer returns NULL.
-       exit(1);
-   }
-   int num;
+int num;
    char s[256];
-   fscanf(fptr,"%d", &num);
-   fscanf(fptr,"%s", &s);
+   printf("Enter Rotation: ");
+   scanf("%d", &num);
+   printf("Enter cipher:");
+   fflush(stdin);
+   gets(s);
    printf("Value of rotation= %d\n", num);
    printf("Value of string= %s\n", s);
 
@@ -60,22 +52,18 @@ void decryptRotation(){
 	}
    }
       printf("After Decryption = %s\n", s);
-   fclose(fptr); 
+   
 }
 void encryptSubstitution(){
-	FILE *fptr;
 
-   if ((fptr = fopen("3.txt","r")) == NULL){
-       printf("Error! opening file");
-
-       // Program exits if the file pointer returns NULL.
-       exit(1);
-   }
    int num;
    char s[256];
    char sub[26];
-   fscanf(fptr,"%s", &sub);
-   fscanf(fptr,"%s", &s);
+   printf("Enter substitue key: ");
+   scanf("%s", &sub);
+   printf("Enter message:");
+   fflush(stdin);
+   gets(s);
    printf("Value of substitute string= %s\n", sub);
    printf("Value of string= %s\n", s);
 
@@ -90,25 +78,19 @@ void encryptSubstitution(){
 	}
    }
       printf("After Encryption = %s\n", s);
-   fclose(fptr);
+   
 }
 
 void decryptSubstitution(){
-	FILE *fptr;
-
-   if ((fptr = fopen("4.txt","r")) == NULL){
-       printf("Error! opening file");
-
-       // Program exits if the file pointer returns NULL.
-       exit(1);
-   }
-   int num;
+int num;
    char s[256];
    char sub[26];
-   fscanf(fptr,"%s", &sub);
-   fscanf(fptr,"%s", &s);
-   printf("Value of substitute string= %s\n", sub);
-   printf("Value of string= %s\n", s);
+   
+   printf("Enter substitue key: ");
+   scanf("%s", &sub);
+   printf("Enter cipher:");
+   fflush(stdin);
+   gets(s);
 
    int len =strlen(s);
    int i=0;
@@ -120,7 +102,7 @@ void decryptSubstitution(){
     for(j=0;j<26;j++)
     if(s[i]==sub[j])
     {
-    	printf("%c %d \n",s[i],j);
+    //	printf("%c %d \n",s[i],j);
 		s[i]=65+j;
 		break;
 	}
@@ -128,7 +110,7 @@ void decryptSubstitution(){
 	}
    }
       printf("After Decryption = %s\n", s);
-   fclose(fptr); 
+  
 }
 void main(){
 	printf("Select any one option: \n");
@@ -148,6 +130,6 @@ void main(){
 	}
 	if(option==4)
 	{
-			decryptSubstitution();
+	 decryptSubstitution();
 	}
 }
