@@ -2,7 +2,8 @@
 #include<stdio.h>
 #include<string.h>
 
-//Option 1 Encryption Rotation Cipher
+//Option 1 Encryption (Rotation)
+// This project uses ASCII Table
 void encryptRotation(){
 	
    int num;
@@ -22,14 +23,14 @@ void encryptRotation(){
    //Loop for string length
    for(int i=0;i<len;i++)
    {
-    //Check if character is lowercase, then convert to upper if true
+    //Checks if character is lowercase, then convert to upper if true
    	if(s[i]>=97 && s[i]<=122)
    	s[i]-=32;
-   	//Check if char is in alphabet range
+   	//Checks if char is in alphabet range
     if(s[i]>=65 && s[i]<=90){
         //Increment (shift) the character based on the rotation provided
     	s[i]+=num;
-    	//Check is character change goes out of bounds of alphabet
+    	//Checks is character change goes out of bounds of alphabet
     	if(s[i]>90)
     	//Loop back to start of the alphabet
     	s[i]=65+(s[i]-90)-1;
@@ -40,7 +41,7 @@ void encryptRotation(){
   
   }
   
-  
+ // Option 2 Decryption (Rotation)  
 
 void decryptRotation(){
 int num;
@@ -66,6 +67,8 @@ int num;
       printf("Plaintext = %s\n", s);
    
 }
+
+//Option 3 Encryption (Substitution)
 void encryptSubstitution(){
 
    int num;
@@ -97,6 +100,7 @@ void encryptSubstitution(){
       printf("After Encryption = %s\n", s);
    
 }
+//Option 4 Decryption (Substitution)
 
 void decryptSubstitution(){
 int num;
@@ -141,19 +145,20 @@ int main()
 	scanf("%d",&option);
 
 	if(option==1){
-	encryptRotation();	
+	encryptRotation();	    //Runs Option 1
 	}
 if(option==2){
-	decryptRotation();	
+	decryptRotation();	    //Runs Option 2
 	}
 	if(option==3)
 	{
-		encryptSubstitution();
+		encryptSubstitution();    //Runs Option 3
 	}
 	if(option==4)
 	{
-	 decryptSubstitution();
+	 decryptSubstitution();    //Runs Option 4
 	}
 	return 0;
 }
 
+//End of Program
